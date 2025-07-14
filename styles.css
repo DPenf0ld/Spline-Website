@@ -13,3 +13,122 @@ html {
     height: 100vh;
     border: none;
 }
+
+
+.oswald-text {
+    position: absolute;
+    color: #ffffff;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-size: 6vw;
+    top: 3%;
+    left: 15%;
+    pointer-events: none;
+    padding: 5%;
+}
+
+h2.oswald-text {
+    position: absolute;
+    color: #ffffff;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-size: 2vw;
+    top: 45%;
+    left: 15%;
+    pointer-events: none;
+    padding: 5%;
+
+}
+
+
+
+/* Interactive vertical buttons */
+
+.vertical-buttons {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: row;   /* horizontal layout */
+  gap: 1.5rem;           /* spacing between buttons */
+  z-index: 1000;
+}
+
+
+
+
+button{
+    position: relative;
+  padding: 1rem 1.5rem;   /* smaller padding */
+  width: 10rem;             /* narrower button */
+  font-size: 1rem;          /* smaller text */
+  border-radius: 30px;  
+
+
+  color: #999;
+  background: #2d2d2d;
+
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+
+  border: none;
+  transition: 0.5s;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+button:hover{
+  color: var(--clr);
+  text-shadow: 0 0 10px var(--clr), 0 0 40px var(--clr);
+}
+
+button span{
+  position: relative;
+  z-index: 1;
+}
+
+button::before{
+  content: '';
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  transform: translate(-50%,-50%);
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(var(--clr), transparent, transparent);
+  transition: 0.5s, top 0s, left 0s;
+  opacity: 0;
+}
+
+button:hover::before{
+  opacity: 1;
+}
+
+button::after{
+  content: '';
+  position: absolute;
+  inset: 3px;
+  background:#2d2d2dcc ;
+  border-radius: 47px;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.block {
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
