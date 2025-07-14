@@ -16,6 +16,8 @@ html {
     z-index: 6000;
 }
 
+
+
 /* Text Style and Position */
 .text-wrapper {
   position: absolute;
@@ -128,6 +130,8 @@ button::after{
   animation-timeline: view();
   animation-range: entry 0% cover 40%;
 }
+
+
 
 /* Smaller media size - phone */
 @media (max-width: 768px) {
