@@ -189,7 +189,7 @@ button::after {
 
 
 /* Smaller media size - phone */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .text-wrapper {
     top: 15%;
     left: 5%;
@@ -221,7 +221,39 @@ button::after {
     /* smaller text */
     padding: 0.6rem 1rem;
   }
+
+  /* about styles */
+  .text-wrapper-about {
+        top: 6%;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 3%;
+  }
+
+  .profile-picture {
+    max-width: 250px;
+    width: 80%;
+  }
+
+  .about-text {
+    font-size: 3vw;
+    text-align: center;
+  }
+
+  .spline-embed-about {
+    width: 110%;
+    height: 110%;
+    top: 10%;
+    left: -5%;
+    transform: scale(1.1);
+  }
+
+  .info{
+    font-size: 3vw;
+  }
 }
+
 
 @media (max-width: 480px) {
   .text-wrapper {
@@ -243,8 +275,35 @@ button::after {
   }
 
   button {
-    width: 6.5rem;
-    font-size: 0.75rem;
+    width: 5.2rem;
+    font-size: 0.5rem;
     padding: 0.5rem 0.8rem;
+  }
+
+  /* about styles */
+   .text-wrapper-about {
+    top: 6%;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2%;
+  }
+
+  .profile-picture {
+    max-width: 180px;
+    width: 70%;
+  }
+
+  .about-text {
+    font-size: 4vw;
+    text-align: center;
+  }
+
+  .subtitle {
+    font-size: 5vw;
+  }
+
+  .info {
+    font-size: 3vw;
   }
 }
