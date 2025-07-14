@@ -1,26 +1,55 @@
 document.addEventListener("DOMContentLoaded", () => {
     const buttons = document.querySelectorAll(".btn");
 
-    buttons.forEach((btn) => {
-        btn.addEventListener('mousemove', (e) => {
-            const rect = btn.getBoundingClientRect();
-            let x = e.clientX - rect.left;
-            let y = e.clientY - rect.top;
+    if (buttons.length > 0) {
+        buttons.forEach((btn) => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                let x = e.clientX - rect.left;
+                let y = e.clientY - rect.top;
 
-            btn.style.setProperty('--x', x + 'px');
-            btn.style.setProperty('--y', y + 'px');
+                btn.style.setProperty('--x', x + 'px');
+                btn.style.setProperty('--y', y + 'px');
+            });
         });
-    });
+    }
 
-    document.getElementById("aboutBtn").addEventListener("click", () => {
-        window.location.href = "about.html";
-    });
+    const currentPage = window.location.pathname.split("/").pop(); // get current filename
 
-    document.getElementById("projectsBtn").addEventListener("click", () => {
-        window.location.href = "projects.html";
-    });
+const homeBtn = document.getElementById("homeBtn");
+if (homeBtn) {
+  homeBtn.addEventListener("click", () => {
+    if (currentPage !== "index.html" && currentPage !== "") { 
+      // empty string if root
+      window.location.href = "index.html";
+    }
+  });
+}
 
-    document.getElementById("contactBtn").addEventListener("click", () => {
-        window.location.href = "mailto:9874@duck.com";
-    });
+const aboutBtn = document.getElementById("aboutBtn");
+if (aboutBtn) {
+  aboutBtn.addEventListener("click", () => {
+    if (currentPage !== "about.html") {
+      window.location.href = "about.html";
+    }
+  });
+}
+
+const projectsBtn = document.getElementById("projectsBtn");
+if (projectsBtn) {
+  projectsBtn.addEventListener("click", () => {
+    if (currentPage !== "projects.html") {
+      window.location.href = "projects.html";
+    }
+  });
+}
+
+const contactBtn = document.getElementById("contactBtn");
+if (contactBtn) {
+  contactBtn.addEventListener("click", () => {
+    // mailto always works
+    window.location.href = "mailto:9874@duck.com";
+  });
+}
+
 });
