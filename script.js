@@ -52,14 +52,50 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  //Rotate on Scroll - Projects
-  const iframeWrapper = document.querySelector('.iframe-wrapper-projects');
+  //Move on Scroll
+  const cursorOutline = document.querySelector('.cursor-outline');
 
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    const rotateY = scrollY * 0.1; // adjust multiplier to control speed
-    iframeWrapper.style.transform = `rotateY(${rotateY}deg)`;
+  let mouseX = 0, mouseY = 0;
+  let outlineX = 0, outlineY = 0;
+
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
   });
 
+  function animateOutline() {
+    // Move outline towards the real cursor with easing
+    outlineX += (mouseX - outlineX) * 0.04;
+    outlineY += (mouseY - outlineY) * 0.04;
 
+    cursorOutline.style.left = `${outlineX}px`;
+    cursorOutline.style.top = `${outlineY}px`;
+
+    requestAnimationFrame(animateOutline);
+  }
+
+  animateOutline();
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const shape = document.querySelector('.spinning-shape');
+  const smoothX = gsap.quickTo(shape, "x", { duration: 0.5, ease: "power3.out" });
+
+  ScrollTrigger.create({
+    trigger: document.body,
+    start: "top top",
+    end: "bottom bottom",
+    scrub: true,
+    onUpdate: (self) => {
+      const progress = self.progress;
+
+      // Left-right motion
+      const SCROLL_SENSITIVITY = 0.7;
+      const scrollFactor = progress * Math.PI * SCROLL_SENSITIVITY;
+      const sineOffset = Math.sin(scrollFactor);
+      const x = sineOffset * (window.innerWidth / 2 - 100);
+      smoothX(x);
+    }
+  });
 });
