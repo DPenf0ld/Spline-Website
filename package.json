@@ -1,0 +1,20 @@
+{
+  "name": "spline-website",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DPenf0ld/Spline-Website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DPenf0ld/Spline-Website/issues"
+  },
+  "homepage": "https://github.com/DPenf0ld/Spline-Website#readme",
+  "description": ""
+}
