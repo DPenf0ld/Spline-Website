@@ -1,3 +1,19 @@
+/*------------Body styles begin here---------*/
+body,
+html {
+  background-color: #000000;
+  overflow-x: hidden;
+}
+
+#no-scroll-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
 /*------------Font styles begin here---------*/
 
 .text-wrapper {
