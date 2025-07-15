@@ -79,6 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   gsap.registerPlugin(ScrollTrigger);
 
+  const cardCount = document.querySelectorAll('.project-card').length;
   const shape = document.querySelector('.spinning-shape');
   const smoothX = gsap.quickTo(shape, "x", { duration: 0.5, ease: "power3.out" });
 
@@ -89,13 +90,15 @@ document.addEventListener("DOMContentLoaded", () => {
     scrub: true,
     onUpdate: (self) => {
       const progress = self.progress;
+      const cardCount = document.querySelectorAll('.project-card').length;
 
-      // Left-right motion
-      const SCROLL_SENSITIVITY = 0.7;
-      const scrollFactor = progress * Math.PI * SCROLL_SENSITIVITY;
-      const sineOffset = Math.sin(scrollFactor);
-      const x = sineOffset * (window.innerWidth / 2 - 100);
+      const phase = 0;
+      const sineOffset = Math.sin((progress + phase) * Math.PI * (cardCount / 2));
+      const amplitude = window.innerWidth * 0.25;
+      const x = sineOffset * amplitude;
       smoothX(x);
     }
   });
+
+
 });
