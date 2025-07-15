@@ -190,7 +190,7 @@ button::after {
   width: 500px;
   height: 500px;
   position: fixed;
-  top: 50%;
+  top: 30%;
   left: 50%;
   transform-style: preserve-3d;
   transform: translate(-50%, -50%);
@@ -213,6 +213,61 @@ button::after {
   overflow: hidden;
   pointer-events: none;
 }
+
+.projects-container {
+  padding-top: 150px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 40vh;
+}
+
+
+.project-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 40px auto;
+  max-width: 1200px;
+  width: 100%;
+  gap: 20px;
+  backdrop-filter: blur(0px);
+}
+
+.project-card.reverse {
+  flex-direction: row-reverse;
+}
+
+.project-card img {
+  opacity: 0.9;
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.project-info {
+  flex: 1;
+}
+
+.project-info h2 {
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.project-info p {
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
 
 /*------------Smaller Media Sizes begin here---------*/
 
