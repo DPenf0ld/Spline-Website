@@ -64,18 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   });
 
-  function animateOutline() {
-    // Move outline towards the real cursor with easing
-    outlineX += (mouseX - outlineX) * 0.04;
-    outlineY += (mouseY - outlineY) * 0.04;
 
-    cursorOutline.style.left = `${outlineX}px`;
-    cursorOutline.style.top = `${outlineY}px`;
-
-    requestAnimationFrame(animateOutline);
-  }
-
-  animateOutline();
 
   gsap.registerPlugin(ScrollTrigger);
 

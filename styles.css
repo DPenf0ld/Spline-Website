@@ -11,14 +11,14 @@ html {
   left: 0;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 /*------------Font styles begin here---------*/
 
 .text-wrapper {
   position: absolute;
-  top: 7%;
+  top: 20%;
   left: 20%;
   pointer-events: none;
   z-index: 8000;
