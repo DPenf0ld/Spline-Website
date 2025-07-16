@@ -331,6 +331,42 @@ button::after {
   .info {
     font-size: 3vw;
   }
+
+  /*---Projects---*/
+  .projects-container {
+    width: 90%;
+    padding-top: 100px;
+  }
+
+  .project-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .project-card.reverse {
+    flex-direction: column;
+  }
+
+  .project-card img {
+    width: 80%;
+    max-width: 250px;
+    margin-bottom: 1rem;
+  }
+
+  .project-info h2 {
+    font-size: 1.6rem;
+  }
+
+  .project-info p {
+    font-size: 1rem;
+  }
+    .spinning-shape {
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 
@@ -382,5 +418,47 @@ button::after {
 
   .info {
     font-size: 3vw;
+  }
+
+  /*---Projects---*/
+    .project-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    margin: 20px auto;
+    width: 80%;
+  }
+
+  .spinning-shape {
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .projects-container {
+    width: 95%;
+    padding-top: 80px;
+    padding-bottom: 20vh;
+  }
+
+  .project-card img {
+    width: 90%;
+    max-width: 140px;
+  }
+
+  .project-info h2 {
+    font-size: 1.3rem;
+  }
+
+  .project-info p {
+    font-size: 0.95rem;
+  }
+
+  .spinning-shape iframe {
+    transform: scale(0.6);
+    transform-origin: center;
+    width: 100%;
+    height: 100%;
   }
 }
