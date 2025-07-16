@@ -1,4 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+  if (document.body.classList.contains('home-page')) {
+    document.documentElement.classList.add('no-scroll');
+  }
+
+
   const buttons = document.querySelectorAll(".btn");
 
   if (buttons.length > 0) {

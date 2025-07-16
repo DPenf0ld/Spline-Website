@@ -5,14 +5,16 @@ html {
   overflow-x: hidden;
 }
 
-#no-scroll-wrapper {
+html.no-scroll,
+body.no-scroll {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  overflow-y: hidden;
+  overflow: hidden;
 }
+
 
 /*------------Font styles begin here---------*/
 
@@ -301,7 +303,7 @@ button::after {
   }
 
   .text-wrapper-about {
-    top: 6%;
+    margin-top: 40px;
     flex-direction: column;
     align-items: center;
     gap: 2rem;
