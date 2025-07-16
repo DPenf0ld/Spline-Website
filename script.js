@@ -58,25 +58,26 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  //Move on Scroll
-  const cursorOutline = document.querySelector('.cursor-outline');
-
-  let mouseX = 0, mouseY = 0;
-  let outlineX = 0, outlineY = 0;
-
-  document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-
-  });
-
-
 
   gsap.registerPlugin(ScrollTrigger);
+
+  let amplitude;
+
+  if (window.innerWidth >= 768 && window.innerWidth <= 1024) {
+    amplitude = window.innerWidth * 0.4;
+  } else {
+    amplitude = window.innerWidth * 0.25;
+  }
 
   const cardCount = document.querySelectorAll('.project-card').length;
   const shape = document.querySelector('.spinning-shape');
   const smoothX = gsap.quickTo(shape, "x", { duration: 0.5, ease: "power3.out" });
+
+  const initialProgress = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+  const initialSineOffset = Math.sin(initialProgress * Math.PI * (cardCount / 2) - Math.PI / 2);
+  const initialX = initialSineOffset * amplitude;
+
+  gsap.set(shape, { x: initialX });
 
   ScrollTrigger.create({
     trigger: document.body,
@@ -85,15 +86,10 @@ document.addEventListener("DOMContentLoaded", () => {
     scrub: true,
     onUpdate: (self) => {
       const progress = self.progress;
-      const cardCount = document.querySelectorAll('.project-card').length;
-
-      const phase = 0;
-      const sineOffset = Math.sin((progress + phase) * Math.PI * (cardCount / 2));
-      const amplitude = window.innerWidth * 0.25;
+      
+      const sineOffset = Math.sin(progress * Math.PI * (cardCount / 2) - Math.PI / 2);
       const x = sineOffset * amplitude;
       smoothX(x);
     }
   });
-
-
 });
