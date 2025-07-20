@@ -86,7 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
     scrub: true,
     onUpdate: (self) => {
       const progress = self.progress;
-      
       const sineOffset = Math.sin(progress * Math.PI * (cardCount / 2) - Math.PI / 2);
       const x = sineOffset * amplitude;
       smoothX(x);
