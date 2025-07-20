@@ -175,7 +175,7 @@ body.no-scroll {
   fill: #181717;
 }
 
-/* From Uiverse.io by Mangesh636 */ 
+/* From Uiverse.io by Mangesh636 */
 .linkedin-btn {
   background: transparent;
   position: relative;
@@ -227,13 +227,13 @@ body.no-scroll {
 }
 
 .social-buttons {
-    position: fixed;
-    top: 0;
-    right: 0;
-    display: flex;
-    gap: 10px;
-    padding: 15px;
-    z-index: 10000;
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  gap: 10px;
+  padding: 15px;
+  z-index: 10000;
 }
 
 
@@ -551,7 +551,7 @@ body.no-scroll {
     transform: translate(-50%, -50%);
   }
 
-    .social-buttons {
+  .social-buttons {
     top: auto;
     bottom: 10px;
     right: 50%;
@@ -570,6 +570,14 @@ body.no-scroll {
   .social-buttons svg {
     width: 20px;
     height: 20px;
+  }
+
+    body.about-page .social-buttons {
+    display: none;
+  }
+
+    body.projects-page .social-buttons {
+    display: none;
   }
 }
 
@@ -676,7 +684,7 @@ body.no-scroll {
     height: 100%;
   }
 
-    .social-buttons {
+  .social-buttons {
     bottom: 5px;
     right: 50%;
     transform: translateX(20%);
@@ -694,5 +702,13 @@ body.no-scroll {
   .social-buttons svg {
     width: 15px;
     height: 15px;
+  }
+
+  body.about-page .social-buttons {
+    display: none;
+  }
+
+  body.projects-page .social-buttons {
+    display: none;
   }
 }
