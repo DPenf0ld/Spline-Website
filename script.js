@@ -77,36 +77,39 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  gsap.registerPlugin(ScrollTrigger);
+  if (typeof gsap !== "undefined" && window.location.pathname.includes("projects.html")) {
+    gsap.registerPlugin(ScrollTrigger);
 
-  let amplitude;
+    let amplitude;
 
-  if (window.innerWidth >= 768 && window.innerWidth <= 1024) {
-    amplitude = window.innerWidth * 0.4;
-  } else {
-    amplitude = window.innerWidth * 0.25;
+    if (window.innerWidth >= 768 && window.innerWidth <= 1024) {
+      amplitude = window.innerWidth * 0.4;
+    } else {
+      amplitude = window.innerWidth * 0.25;
+    }
+
+    const cardCount = document.querySelectorAll('.project-card').length;
+    const shape = document.querySelector('.spinning-shape');
+    const smoothX = gsap.quickTo(shape, "x", { duration: 0.5, ease: "power3.out" });
+
+    const initialProgress = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+    const initialSineOffset = Math.sin(initialProgress * Math.PI * (cardCount / 2) - Math.PI / 2);
+    const initialX = initialSineOffset * amplitude;
+
+    gsap.set(shape, { x: initialX });
+
+    ScrollTrigger.create({
+      trigger: document.body,
+      start: "top top",
+      end: "bottom bottom",
+      scrub: true,
+      onUpdate: (self) => {
+        const progress = self.progress;
+        const sineOffset = Math.sin(progress * Math.PI * (cardCount / 2) - Math.PI / 2);
+        const x = sineOffset * amplitude;
+        smoothX(x);
+      }
+    });
   }
 
-  const cardCount = document.querySelectorAll('.project-card').length;
-  const shape = document.querySelector('.spinning-shape');
-  const smoothX = gsap.quickTo(shape, "x", { duration: 0.5, ease: "power3.out" });
-
-  const initialProgress = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-  const initialSineOffset = Math.sin(initialProgress * Math.PI * (cardCount / 2) - Math.PI / 2);
-  const initialX = initialSineOffset * amplitude;
-
-  gsap.set(shape, { x: initialX });
-
-  ScrollTrigger.create({
-    trigger: document.body,
-    start: "top top",
-    end: "bottom bottom",
-    scrub: true,
-    onUpdate: (self) => {
-      const progress = self.progress;
-      const sineOffset = Math.sin(progress * Math.PI * (cardCount / 2) - Math.PI / 2);
-      const x = sineOffset * amplitude;
-      smoothX(x);
-    }
-  });
 });
