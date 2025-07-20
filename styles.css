@@ -550,6 +550,27 @@ body.no-scroll {
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
+    .social-buttons {
+    top: auto;
+    bottom: 10px;
+    right: 50%;
+    transform: translateX(50%);
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .social-buttons .button,
+  .social-buttons .linkedin-btn {
+    padding: 6px 10px;
+    font-size: 14px;
+    gap: 8px;
+  }
+
+  .social-buttons svg {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 
@@ -653,5 +674,25 @@ body.no-scroll {
     transform-origin: center;
     width: 100%;
     height: 100%;
+  }
+
+    .social-buttons {
+    bottom: 5px;
+    right: 50%;
+    transform: translateX(20%);
+    gap: 6px;
+    padding: 8px;
+  }
+
+  .social-buttons .button,
+  .social-buttons .linkedin-btn {
+    padding: 5px 8px;
+    font-size: 12px;
+    gap: 6px;
+  }
+
+  .social-buttons svg {
+    width: 15px;
+    height: 15px;
   }
 }
