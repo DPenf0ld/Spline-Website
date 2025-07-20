@@ -8,13 +8,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  document.querySelector(".button").addEventListener("click", () => {
-    window.open("https://github.com/DPenf0ld/DPenf0ld", "_blank");
-  });
+  const githubBtn = document.querySelector(".button");
+  if (githubBtn) {
+    githubBtn.addEventListener("click", () => {
+      window.open("https://github.com/DPenf0ld/DPenf0ld", "_blank");
+    });
+  }
 
-  document.querySelector(".linkedin-btn").addEventListener("click", () => {
-    window.open("https://www.linkedin.com/in/david-penfold-6624ba256/", "_blank");
-  });
+  const linkedinBtn = document.querySelector(".linkedin-btn");
+  if (linkedinBtn) {
+    linkedinBtn.addEventListener("click", () => {
+      window.open("https://www.linkedin.com/in/david-penfold-6624ba256/", "_blank");
+    });
+  }
+
 
 
 
