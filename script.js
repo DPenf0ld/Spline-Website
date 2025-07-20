@@ -1,4 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll('.github-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      const url = button.getAttribute('data-url');
+      if (url) {
+        window.open(url, '_blank');
+      }
+    });
+  });
+
+  document.querySelector(".button").addEventListener("click", () => {
+    window.open("https://github.com/DPenf0ld/DPenf0ld", "_blank");
+  });
+
+  document.querySelector(".linkedin-btn").addEventListener("click", () => {
+    window.open("https://www.linkedin.com/in/david-penfold-6624ba256/", "_blank");
+  });
+
+
 
   if (document.body.classList.contains('home-page')) {
     document.documentElement.classList.add('no-scroll');
