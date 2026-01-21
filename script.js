@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (contactBtn) {
     contactBtn.addEventListener("click", () => {
       // mailto always works
-      window.location.href = "mailto:9874@duck.com";
+        window.location.href = "mailto:9874@duck.com";
     });
   }
 
